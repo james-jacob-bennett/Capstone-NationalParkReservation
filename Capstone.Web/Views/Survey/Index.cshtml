@@ -1,0 +1,86 @@
+﻿@using Capstone.Web.Models;
+@model SurveyResult
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.title = "Survey";
+}
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+
+
+
+@using (Html.BeginForm("Survey", "Survey", FormMethod.Post))
+{
+<div class="survey-container">
+    <div class="survey-header-container">
+        <p>
+            Thank you for taking part in the National Park Service's visitor survey!  Please fill out the below form
+            for your favorite park so that we can know more about your experience.  Parks Rule!
+        </p>
+    </div>
+    <div class="survey-header-container">
+        <h2 class="home-header">Survey Form:</h2>
+    </div>
+        <div class="survey-container-row">
+            <div class="survey-label">
+                <h5 class="title-survey">Favorite National Park:</h5>
+            </div>
+            <div class="survey-box">
+                @Html.DropDownListFor(m => m.ParkCode, SurveyHelper.ListsOfParks)
+                @Html.ValidationMessageFor(m => m.ParkCode)
+            </div>
+        </div>
+        <div class="survey-container-row">
+            <div class="survey-label">
+                <h5 class="title-survey">What is your email address?</h5>
+            </div>
+            <div class="survey-box">
+                @Html.EditorFor(m => m.EmailAddress)
+                @Html.ValidationMessageFor(m => m.EmailAddress)
+            </div>
+        </div>
+        <div class="survey-container-row">
+            <div class="survey-label">
+                <h5 class="title-survey">What state do you live in?</h5>
+            </div>
+            <div class="survey-label">
+                @Html.DropDownListFor(m => m.State, SurveyHelper.ListsOfStates)
+                @Html.ValidationMessageFor(m => m.State)
+            </div>
+        </div>
+        <div class="survey-container-row">
+            <br />
+            <div class="survey-label">
+                <h5 class="title-survey">Activity Level:</h5>
+            </div>
+            <div class="survey-radio">
+                <input type="radio" name="ActivityLevel" value="Inactive"> Inactive<br>
+            </div>
+            <div class="survey-radio">
+                <input type="radio" name="ActivityLevel" value="sedentary"> sedentary<br>
+            </div>
+            <div class="survey-radio">
+                <input type="radio" name="ActivityLevel" value="active"> active<br>
+            </div>
+            <div class="survey-radio">
+                <input type="radio" name="ActivityLevel" value="extremely active"> extremely active<br>
+            </div>
+            <div class="survey-radio">
+                <input type="radio" name="ActivityLevel" value="Louis and Clark Extreme!"> Louis and Clark Extreme!<br>
+            </div>
+            @Html.ValidationMessageFor(m => m.ActivityLevel)
+        </div>
+        <div>
+            <button class="button button2">Submit</button>
+        </div>
+    </div>
+    }
+

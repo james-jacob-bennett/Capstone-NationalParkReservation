@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>National Park Geek</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/Content/stylesheet.css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style type="text/css">
+        label {
+            display: block;
+        }
+       .form-control {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar-fixed-top">
+        <header>
+            <img class="logo-img" src="~/Content/img/logo.png" alt="National Park Geek logo" />
+        </header>
+        <ul>
+            <li> <a href="@Url.Action("Index", "Home")">Home</a></li>
+            <li> <a href="@Url.Action("Index", "Survey")">Survey</a></li>
+        </ul>
+    </nav>
+    <section>
+        @RenderBody()
+    </section>
+</body>
+</html>

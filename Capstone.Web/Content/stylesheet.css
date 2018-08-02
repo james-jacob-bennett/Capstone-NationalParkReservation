@@ -1,0 +1,449 @@
+﻿
+/*_Layout style*/
+
+
+
+.logo-img{
+    height:80px;
+    width:auto;
+}
+
+body{
+    margin-top:140px;
+}
+
+header{
+    margin: 0px, 0px, 2px, 0px;
+    background-color:white;
+}
+
+nav {
+    background-color: darkolivegreen;
+    margin-bottom: 20px;
+    padding: 0px;
+    height: 115px;
+}
+
+    nav ul {
+        padding-top:5px;
+        float: left;
+    }
+
+    nav li {
+        list-style-type: none;
+        color: white;
+        margin-left: 25px;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+        float: left;
+    }
+
+        nav li a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            nav li a:hover {
+                text-decoration: underline;
+            }
+
+section{
+    align-content:center;
+}
+
+
+/*Home Page*/
+
+.flex-container-row{
+    display:flex;
+    flex-direction:row;
+    /*border-style:solid;*/
+    /*border-color:blue;
+    border-width:1px;*/
+    flex-flow: wrap;
+    margin-bottom:10px;
+    background-color:floralwhite;
+
+}
+
+.home-border {
+    border-style: solid;
+    border-color: darkolivegreen;
+    border-width: 1px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.flex-container-column {
+    display:flex;
+    flex-direction: column;
+    flex-flow:wrap;
+    max-width:95%;
+    /*border-style: solid;
+    border-color: red;
+    border-width: 1px;*/
+    justify-content:center;
+    margin-left:2.5%;
+}
+.home-img-container {
+    width: 50%;
+    margin-right: 30px;
+}
+
+.home-img{
+    width:100%;
+    height:auto;
+    
+}
+
+.home-description{
+    margin-top:0px;
+    width:70%;
+    padding-right:30px;
+}
+.home-header{
+    margin-top:5px;
+    padding-top:0px;
+    padding-bottom:5px;
+    margin-bottom:5px;
+    border-bottom:solid;
+    border-width:1px;
+    border-color:darkolivegreen;
+    color:darkolivegreen;
+}
+.home-subheader {
+    color: #8e8e8e;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+/*Detail Page*/
+.detail-container-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 95%;
+    /*border-style: solid;
+    border-color: red;
+    border-width: 1px;*/
+    justify-content: left;
+    margin-left: 2.5%;
+}
+.detail-container-row {
+    display: flex;
+    flex-direction: row;
+    /*border-style:solid;*/
+    /*border-color:blue;
+    border-width:1px;*/
+    margin-bottom: 0px;
+    flex-shrink: 3;
+}
+
+.detail-img {
+    width:100%;
+    height:auto;
+    
+}
+
+.detail-img-container {
+    overflow: hidden;
+    max-height: 400px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: darkolivegreen;
+    border-width: 1px;
+    border-radius: 15px;
+}
+
+.detail-quote{
+    margin-bottom:10px;
+    margin-left:33%;
+    padding-left:2%;
+    padding-right:2%;
+    width:33%;
+    text-align:left;
+    background-color:lightblue;
+    font-family:'Bookman Old Style';
+    font-style:italic;
+}
+
+.detail-quote-name{
+    float:right;
+    display:block;
+}
+
+.detail-header {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 250%;
+    font-weight: bold;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: darkolivegreen;
+    color: darkolivegreen;
+}
+.detail-subheader {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 170%;
+    font-weight: bold;
+    color:grey;
+}
+
+.bold-inline{
+    font-weight:bold;
+    display:inline;
+}
+
+.detail-detail-header {
+    width: 11%;
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 0px;
+    color: darkolivegreen;
+    border-top: solid;
+    border-right: solid;
+    border-left: solid;
+    border-width: 1px;
+    border-color: darkolivegreen;
+    /*border-style:solid;
+    border-width:1px;
+    border-color:green;*/
+    flex-shrink: 3;
+}
+.detail-detail {
+    width: 11%;
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+    text-align: left;
+    margin-top-0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkolivegreen;
+    border-radius: 0px 0px 10px 10px;
+    background-color: floralwhite;
+    flex-shrink: 3;
+}
+.detail-weather-future-container {
+    width: 75%;
+    margin-top: 5% 10% 5% 10%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.detail-weather-container-row {
+    display: flex;
+    flex-direction: row;
+    /*border-style:solid;*/
+    /*border-color:blue;
+    border-width:1px;*/
+    margin-bottom: 10px;
+}
+.detail-weather {
+    width: 25%;
+    margin-right: .5%;
+    margin-left: .5%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkolivegreen;
+    margin-bottom: 20%;
+    background-color: floralwhite;
+    border-radius: 0px 0px 10px 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.detail-weather-img {
+    width: 100%;
+    height: auto;
+    border-bottom: solid;
+    border-color: whitesmoke;
+    border-width: 1px;
+}
+.detail-weather-today {
+    width: 25%;
+    border-style: solid;
+    margin-right: .5%;
+    border-width: 1px;
+    border-color: darkolivegreen;
+    background-color: floralwhite;
+    border-radius: 0px 0px 10px 10px;
+    padding-right:5px;
+    padding-left:5px;
+    padding-top: 5px;
+}
+.today-weather-img-container {
+    width: 100%;
+    border-bottom:solid;
+    border-color:whitesmoke;
+    border-width:1px;
+    
+}
+.bold{
+    font-weight:bold;
+}
+.today-weather-title{
+    text-align:center;
+    font-size: 150%;
+    font-weight:bold;
+}
+.today-weather-label{
+    font-weight:bold;
+    font-size:110%;
+}
+.today-hightemp{
+    font-size:250%;
+    color:red;
+}
+.today-lowtemp {
+    font-size: 250%;
+    color: dodgerblue;
+}
+
+.weather-title {
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.weather-label {
+    font-weight: bold;
+}
+
+.hightemp {
+    font-size: 200%;
+    color: red;
+}
+
+.lowtemp {
+    font-size: 200%;
+    color: dodgerblue;
+}
+
+/*survey result page*/
+.result-row{
+    display:flex;
+    flex-direction:row;
+    width:95%;
+    margin-left:2.5%;
+    max-height: 200px;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    border-style:solid;
+    border-width:1px;
+    border-color:darkolivegreen;
+    border-radius: 0px 15px 15px 0px;
+}
+.result-header{
+    margin-bottom:0px;
+}
+
+.result-header2{
+    margin-top:0px;
+    border-bottom:solid;
+    border-width:1px;
+    border-color:darkolivegreen;
+    font-weight:bold;
+    color:darkolivegreen;
+}
+.result-img-container {
+    width: 20%;
+    height: 200px;
+}
+.result-description {
+    width: 80%;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: floralwhite;
+    border-radius: 0px 15px 15px 0px;
+    /*margin-left: 30px;*/
+}
+.result-img {
+    width: auto;
+    height: 200px;
+    border-right: solid;
+    border-width: 1px;
+    border-color: darkolivegreen;
+}
+
+
+.title-survey{
+    font-weight:bold;
+}
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button {
+    background-color: darkolivegreen; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    margin-bottom:10px;
+    border-radius:5px;
+}
+
+/*Survey Index*/
+
+.survey-container {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    max-width: 95%;
+    /*border-style: solid;
+    border-color: red;
+    border-width: 1px;*/
+    justify-content: center;
+    margin-left: 2.5%;
+}
+.survey-container-row {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    margin-bottom:10px;
+    b/*order-style: solid;
+    border-color: blue;
+    border-width: 1px;*/
+    margin-top: 10px;
+}
+.survey-radio{
+    width:15%
+}
+.survey-box{
+    width:75%;
+}
+.survey-label{
+    width:25%;
+}
+
+.left-header{
+    text-align:left;
+    justify-content: flex-start;
+    align-content:left;
+    float:left;
+}
+
+h5{
+    margin-top:0px;
+}
+
+.survey-header-container{
+    width:100%;
+}
+
+.width-100{
+    width:100%;
+}

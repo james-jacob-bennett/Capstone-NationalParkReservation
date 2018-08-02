@@ -1,0 +1,121 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Capstone.Web.Models
+@model Park
+
+
+
+<div class="detail-container-column">
+    <div class="detail-img-container"><img class="detail-img" src="~/Content/img/parks/@(Model.ParkCode.ToLower()).jpg" /></div>
+    <div class="detail-quote">
+        "@Model.InspirationalQuote"
+        <div class="detail-quote-name">-@Model.InspirationalQuoteSource</div>
+    </div>
+    <p class="detail-header">@Model.ParkName</p>
+    <p class="detail-subheader">@Model.State</p>
+    <div class="detail-container-row">
+        <div class="detail-detail-header">Acreage:</div>
+        <div class="detail-detail-header">Elevation:</div>
+        <div class="detail-detail-header">Mi. of Trail:</div>
+        <div class="detail-detail-header">No. of Campsites:</div>
+        <div class="detail-detail-header">Climate:</div>
+        <div class="detail-detail-header">Year Founded:</div>
+        <div class="detail-detail-header">Annual Visitors:</div>
+        <div class="detail-detail-header">Entry Fee:</div>
+        <div class="detail-detail-header">No. of Species:</div>
+    </div>
+    <div class="detail-container-row">
+        <div class="detail-detail">@Model.Acreage acres</div>
+        <div class="detail-detail">@Model.ElevationInFeet ft. above sea level</div>
+        <div class="detail-detail">@Model.MilesOfTrail mi.</div>
+        <div class="detail-detail">@Model.NumberOfCampsites </div>
+        <div class="detail-detail">@Model.Climate </div>
+        <div class="detail-detail">@Model.YearFounded </div>
+        <div class="detail-detail">@Model.AnnualVisitorCount </div>
+        <div class="detail-detail">@Model.EntryFee.ToString("c") </div>
+        <div class="detail-detail">@Model.NumberOfAnimalSpecies species of animals</div>
+    </div>
+    <div>
+        <p></p>
+        <p class="detail-subheader">Description:</p>
+        <p>@Model.ParkDescription</p>
+    </div>
+    <div>
+        <p class="detail-subheader">Weather:</p>
+        @using (Html.BeginForm("ChangeTempStyle", "Home", FormMethod.Get))
+        {
+        <input type="hidden" value="@Model.ParkCode" name="parkCode" />
+//        @Html.DropDownList("isFarenheit", TempHelper.TrueFalse)
+        @Html.EnumDropDownListFor(m => m.TempScale)
+
+        <button class="button button2">Go!</button>
+        }
+    </div>
+    <div>
+        <div class="detail-weather-container-row">
+            <div class="detail-weather-today">
+                <div class="today-weather-img-container">
+                    <img class="detail-weather-img" src="~/Content/img/weather/@(Model.Forecast[0].Forecast).png" />
+                </div>
+                <div class="today-weather-title">Today</div>
+                @if (Model.TempHelper.IsFarenheit)
+                {
+                <p class="today-weather-label">High:</p>
+                <p class="today-hightemp"> @Model.Forecast[0].High°F</p>
+                <p class="today-weather-label">Low: </p>
+                <p class="today-lowtemp">@Model.Forecast[0].Low°F </p>
+                }
+                else if (!Model.TempHelper.IsFarenheit)
+                {
+                <p class="today-weather-label">High:</p>
+                <p class="today-hightemp"> @Model.Forecast[0].CelsiusHigh°C</p>
+                <p class="today-weather-label">Low: </p>
+                <p class="today-lowtemp">@Model.Forecast[0].CelsiusLow°C </p>
+                }
+                <p class="today-weather-label">Weather: </p>
+                <p>@Model.Forecast[0].Forecast </p>
+                <p class="today-weather-label">Recommendation:</p> 
+                <p>@Model.TempHelper.GetWeatherRecommendation(@Model.Forecast[0])</p>
+            </div>
+            <div class="detail-weather-future-container">
+                @for (int i = 1; i < 5; i++)
+                {
+                <div class="detail-weather">
+                    <div class="detail-weather-img-container">
+                        <img class="detail-weather-img" src="~/Content/img/weather/@(Model.Forecast[i].Forecast).png" />
+                    </div>
+                    @if (i == 1)
+                    {
+                <div class="weather-title">Tomorrow</div>
+                    }
+                    else if (i != 1)
+                    {
+                <div class="weather-title"> Day @Model.Forecast[i].FiveDayForecastValue </div>
+                    }
+                    @if (Model.TempHelper.IsFarenheit)
+                    {
+                <p class="weather-label">High:</p>
+                <p class="hightemp"> @Model.Forecast[i].High°F</p>
+                <p class="weather-label">Low: </p>
+                <p class="lowtemp">@Model.Forecast[i].Low°F </p>
+                    }
+                    else if (!Model.TempHelper.IsFarenheit)
+                    {
+                <p class="weather-label">High:</p>
+                <p class="hightemp"> @Model.Forecast[i].CelsiusHigh°C</p>
+                <p class="weather-label">Low: </p>
+                <p class="lowtemp">@Model.Forecast[i].CelsiusLow°C </p>
+                    }
+                    <p class="weather-label">Weather: </p>
+                <p>@Model.Forecast[i].Forecast </p>
+                <p class="weather-label">Recommendation:</p> 
+                <p>@Model.TempHelper.GetWeatherRecommendation(@Model.Forecast[i])</p>
+                </div>
+                }
+            </div>
+        </div>
+</div>
+
+
